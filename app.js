@@ -9,8 +9,21 @@ const server = http.createServer((req, res) => {
     res.end('Hello World');
 });
 
+
+const shopify = new Shopify({
+    shopName: 'eco-pendulum',
+    apiKey: '8c9e4e7d68911b51fe698d7c3c90ba22',
+    password: 'gecrud'
+  });
+
+
+  shopify.customer.list()
+  .then(customers => console.log(customers))
+  .catch(err => console.error(err));  
+
 console.log("awawaw");
 const app = express();
+
 
 app.get('/', async (req, res) => {
   // Get the customer data from Shopify.
