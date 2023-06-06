@@ -10,7 +10,6 @@ const server = http.createServer((req, res) => {
 });
 
 console.log("awawaw");
-
 const app = express();
 
 app.get('/', async (req, res) => {
