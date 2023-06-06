@@ -57,6 +57,12 @@ const shopify = new Shopify({
   password: 'gecrud'
 });
 
+app.get('/', async (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Shopify API connection');
+});
+
 app.get('/customers', async (req, res) => {
   try {
     const customers = await shopify.customer.list();
